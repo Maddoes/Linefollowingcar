@@ -15,8 +15,8 @@ void Motor :: SetSpeed(int speed){
         digitalWrite(_pinB, LOW);
     }
     else{
-        digitalWrite(_pinB, HIGH);
-        digitalWrite(_pinA, LOW);
+        digitalWrite(_pinB, LOW);
+        digitalWrite(_pinA, HIGH);
         speed = -speed;
     }
     analogWrite(_pwmPin, constrain(speed, 0, 255));
