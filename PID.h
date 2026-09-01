@@ -4,20 +4,22 @@
 class PID{
     
     private:
-        const double _kp = 0.5;
-        const double _ki = 0.002;
-        const double _kd = 0.01;
+         
+        double _kp;
+        double _ki;
+        double _kd;
         
         double _proportional;
-        double _integral = 0;
+        double _integral;
         double _derivative;
-        double _previousError = 0;
-        unsigned long _lastTime = 0;
+        double _previousError;
+        unsigned long _lastTime;
 
     public:
         double error;
-
+        PID(double integral, double previousError);
         double pid(double error);
+        void SetPid(double kp, double ki, double kd);
 };
 
 
